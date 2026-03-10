@@ -1,0 +1,76 @@
+/* ====================================
+   GRAVITY — LIGHT PREMIUM NEUMORPHISM
+   Zero-gravity Dribbble-inspired
+   ==================================== */
+
+:root {
+  /* Light premium base — matches Dribbble grey */
+  --bg-base: #e0e0e0;
+  --bg-card: #e8e8e8;
+  --shadow-dark: #bebebe;
+  --shadow-light: #ffffff;
+
+  /* Accent Colors — black/orange palette from Dribbble */
+  --accent-black: #1a1a1a;
+  --accent-orange: #FF7A00;
+  --accent-orange-light: #FFB366;
+  --accent-blue: #4A6CF7;
+  --accent-purple: #7C5CFC;
+  --accent-green: #34D399;
+  --accent-cyan: #22D3EE;
+  --accent-pink: #F472B6;
+  --accent-gold: #FBBF24;
+
+  /* Card Glass (light) - high opacity for readability */
+  --card-glass: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(0, 0, 0, 0.08);
+  --card-border-hover: rgba(255, 122, 0, 0.25);
+
+  /* Text — dark on light */
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-muted: #8a8a8a;
+  --text-accent: #FF7A00;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #FF7A00, #FF9F40);
+  --gradient-dark: linear-gradient(135deg, #1a1a1a, #333333);
+
+  /* Typography */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 30px;
+  --radius-xl: 40px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-base);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* === LIGHT NEUMORPHISM === */
+.neu-flat {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  box-shadow:
+    8px 8px 16px var(--shadow-dark),
+    -8px -8px 16px var(--shadow-light);
+}
+
+.neu-pressed {
+  background: var(--bg-card);
+  border-radius: var(--radius-md);
+  box-shadow:
+    inset 4px 4px 8px var(--shadow-dark),
+    inset -4px -4px 8px var(--shadow-light);
+}
