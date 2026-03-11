@@ -52,6 +52,15 @@ export default function ChapterTwo() {
         />
       </motion.div>
 
+      {/* ===== EDUCATIONAL IMAGE ===== */}
+      <motion.div className="neu-card" {...sectionAnim} style={{ marginTop: '3rem', padding: '2rem', display: 'flex', justifyContent: 'center' }}>
+        <img 
+          src="https://login.skillizee.io/s/articles/69b0e6a4cd5819c62bc542d4/images/image-20260311092102-1.png" 
+          alt="Gravitation Concept" 
+          style={{ maxWidth: '100%', height: 'auto', borderRadius: 'var(--radius-sm)' }} 
+        />
+      </motion.div>
+
       {/* ===== CONCEPT EXPLANATION ===== */}
       <motion.div className="neu-card" {...sectionAnim} style={{ marginTop: '3rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
