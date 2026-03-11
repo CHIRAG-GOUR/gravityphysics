@@ -9,6 +9,7 @@ import ChapterFour from './components/ChapterFour'
 import ChapterTwoOne from './components/ChapterTwoOne'
 import ChapterTwoTwo from './components/ChapterTwoTwo'
 import ChapterTwoThree from './components/ChapterTwoThree'
+import ChapterThreeOne from './components/ChapterThreeOne'
 import GravityProgressBars from './components/GravityProgressBars'
 
 export default function App() {
@@ -67,6 +68,12 @@ export default function App() {
               <>
                 <HeroSection title="MASS & WEIGHT" description="Understanding the fundamental difference between the amount of matter and the force of gravity." />
                 <ChapterTwoThree />
+              </>
+            } />
+            <Route path="/chapter-3.1" element={
+              <>
+                <HeroSection title="THRUST & PRESSURE" description="How forces are distributed across surfaces and the resulting effects." />
+                <ChapterThreeOne />
               </>
             } />
           </Routes>
