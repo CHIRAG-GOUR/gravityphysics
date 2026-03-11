@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import CosmicBackground from './components/CosmicBackground'
 import HeroSection from './components/HeroSection'
 import ChapterContent from './components/ChapterContent'
@@ -16,7 +16,7 @@ import GravityProgressBars from './components/GravityProgressBars'
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <div className="app-container">
         {/* Zero-Gravity 3D Background */}
         <div className="three-bg-container">
@@ -93,6 +93,6 @@ export default function App() {
           </Routes>
         </div>
       </div>
-    </BrowserRouter>
+    </Router>
   )
 }
