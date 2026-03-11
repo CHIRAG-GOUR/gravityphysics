@@ -13,6 +13,7 @@ import ChapterThreeOne from './components/ChapterThreeOne'
 import ChapterThreeTwo from './components/ChapterThreeTwo'
 import ChapterThreeThree from './components/ChapterThreeThree'
 import GravityProgressBars from './components/GravityProgressBars'
+import FullscreenButton from './components/FullscreenButton'
 
 export default function App() {
   return (
@@ -25,6 +26,9 @@ export default function App() {
 
         {/* Gravity Drip Progress Bars */}
         <GravityProgressBars />
+
+        {/* Fullscreen Toggle */}
+        <FullscreenButton />
 
         {/* Content Layer */}
         <div className="content-layer">
