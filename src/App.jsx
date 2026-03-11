@@ -6,6 +6,7 @@ import ChapterContent from './components/ChapterContent'
 import ChapterTwo from './components/ChapterTwo'
 import ChapterThree from './components/ChapterThree'
 import ChapterFour from './components/ChapterFour'
+import ChapterTwoOne from './components/ChapterTwoOne'
 import GravityProgressBars from './components/GravityProgressBars'
 
 export default function App() {
@@ -46,6 +47,12 @@ export default function App() {
               <>
                 <HeroSection title="UNIVERSAL LAW" description="F = G(Mm)/d² : The mathematical formula that binds us to the earth and orbits planets around the sun." />
                 <ChapterFour />
+              </>
+            } />
+            <Route path="/chapter-2.1" element={
+              <>
+                <HeroSection title="FREE FALL" description="When an object falls towards the earth under the influence of gravitational force alone." />
+                <ChapterTwoOne />
               </>
             } />
           </Routes>
