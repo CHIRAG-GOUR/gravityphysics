@@ -2,6 +2,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import VideoCard from './VideoCard'
 import FreeFallCatchActivity from './FreeFallCatchActivity'
+import StoneUpwardActivity from './StoneUpwardActivity'
+import ConceptCard from './ConceptCard'
 
 const sectionAnim = {
   initial: { opacity: 0, y: 50 },
@@ -90,6 +92,20 @@ export default function ChapterTwoOne() {
             <p>• It reaches a certain height and then it starts falling down.</p>
           </div>
         </div>
+      </motion.div>
+
+      {/* ===== UPWARD STONE ACTIVITY ===== */}
+      <motion.div {...sectionAnim} style={{ marginTop: '3rem' }}>
+        <StoneUpwardActivity />
+      </motion.div>
+
+      {/* ===== AIR RESISTANCE CONCEPT CARD ===== */}
+      <motion.div {...sectionAnim} style={{ marginTop: '3rem' }}>
+        <ConceptCard 
+          title="Air Resistance" 
+          description="In reality, objects don't exist in a pure vacuum. The air itself pushes against falling objects creating 'drag', slowing their fall based on shape and surface area. This is why a flat piece of paper falls slower than a crumpled ball of paper!" 
+          color="blue" 
+        />
       </motion.div>
 
       {/* ===== CATCH ACTIVITY ===== */}

@@ -8,6 +8,7 @@ import ChapterThree from './components/ChapterThree'
 import ChapterFour from './components/ChapterFour'
 import ChapterTwoOne from './components/ChapterTwoOne'
 import ChapterTwoTwo from './components/ChapterTwoTwo'
+import ChapterTwoThree from './components/ChapterTwoThree'
 import GravityProgressBars from './components/GravityProgressBars'
 
 export default function App() {
@@ -60,6 +61,12 @@ export default function App() {
               <>
                 <HeroSection title="ACCELERATION DUE TO GRAVITY" description="The constant acceleration experienced by objects in free fall due to Earth's gravitational attraction." />
                 <ChapterTwoTwo />
+              </>
+            } />
+            <Route path="/chapter-2.3" element={
+              <>
+                <HeroSection title="MASS & WEIGHT" description="Understanding the fundamental difference between the amount of matter and the force of gravity." />
+                <ChapterTwoThree />
               </>
             } />
           </Routes>
