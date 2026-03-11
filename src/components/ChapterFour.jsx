@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import VideoCard from './VideoCard'
-import GravitySimulator from './GravitySimulator'
+import UniversalLawMathSimulator from './UniversalLawMathSimulator'
 import GravitationalPhenomenaSimulator from './GravitationalPhenomenaSimulator'
 
 const sectionAnim = {
@@ -113,7 +113,7 @@ export default function ChapterFour() {
 
       {/* ===== INTERACTIVE SIMULATOR ===== */}
       <motion.div {...sectionAnim} style={{ marginTop: '3rem' }}>
-        <GravitySimulator />
+        <UniversalLawMathSimulator />
       </motion.div>
 
       {/* ===== UNIVERSAL GRAVITATIONAL CONSTANT ===== */}
