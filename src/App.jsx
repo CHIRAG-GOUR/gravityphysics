@@ -10,6 +10,7 @@ import ChapterTwoOne from './components/ChapterTwoOne'
 import ChapterTwoTwo from './components/ChapterTwoTwo'
 import ChapterTwoThree from './components/ChapterTwoThree'
 import ChapterThreeOne from './components/ChapterThreeOne'
+import ChapterThreeTwo from './components/ChapterThreeTwo'
 import GravityProgressBars from './components/GravityProgressBars'
 
 export default function App() {
@@ -74,6 +75,12 @@ export default function App() {
               <>
                 <HeroSection title="THRUST & PRESSURE" description="How forces are distributed across surfaces and the resulting effects." />
                 <ChapterThreeOne />
+              </>
+            } />
+            <Route path="/chapter-3.2" element={
+              <>
+                <HeroSection title="AREA VS PRESSURE" description="Understanding the inverse relationship between area and pressure through real-world examples." />
+                <ChapterThreeTwo />
               </>
             } />
           </Routes>

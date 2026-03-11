@@ -16,17 +16,15 @@ function Thumb({ pushing, position }) {
       
       {/* Downward force animated arrow */}
       {pushing && (
-         <group position={[1, 1.5, 0]}>
-            <arrowHelper 
-              args={[
-                new THREE.Vector3(0, -1, 0), 
-                new THREE.Vector3(0, 0, 0), 
-                2, 
-                0xef4444,
-                0.5,
-                0.5
-              ]} 
-            />
+         <group position={[1.5, 0.5, 0]}>
+            <mesh position={[0, 1, 0]}>
+                <cylinderGeometry args={[0.05, 0.05, 1, 16]} />
+                <meshStandardMaterial color="#ef4444" />
+            </mesh>
+            <mesh position={[0, 0.3, 0]} rotation={[Math.PI, 0, 0]}>
+                <coneGeometry args={[0.2, 0.4, 16]} />
+                <meshStandardMaterial color="#ef4444" />
+            </mesh>
          </group>
       )}
     </group>
