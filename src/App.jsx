@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import CosmicBackground from './components/CosmicBackground'
 import HeroSection from './components/HeroSection'
 import ChapterContent from './components/ChapterContent'
+import ChapterTwo from './components/ChapterTwo'
 import GravityProgressBars from './components/GravityProgressBars'
 
 export default function App() {
@@ -27,8 +28,8 @@ export default function App() {
                 <ChapterContent />
               </>
             } />
-            {/* Future Chapters would go here:
             <Route path="/chapter-1.2" element={<ChapterTwo />} />
+            {/* Future Chapters would go here:
             <Route path="/chapter-1.3" element={<ChapterThree />} />
             */}
           </Routes>

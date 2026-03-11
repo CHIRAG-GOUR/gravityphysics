@@ -3,8 +3,9 @@ import { motion } from 'framer-motion'
 import ConceptCard from './ConceptCard'
 import GravitySimulator from './GravitySimulator'
 import OrbitSimulator from './OrbitSimulator'
-import FreeFallSimulator from './FreeFallSimulator'
 import NewtonCannonSimulator from './NewtonCannonSimulator'
+import FreeFallSimulator from './FreeFallSimulator'
+import { Link } from 'react-router-dom'
 
 const sectionAnim = {
   initial: { opacity: 0, y: 50 },
@@ -109,6 +110,30 @@ export default function ChapterContent() {
 
       {/* ===== Interactive: Newton's Cannonball ===== */}
       <NewtonCannonSimulator />
+
+      {/* ===== NEXT CHAPTER NAVIGATION ===== */}
+      <motion.div {...sectionAnim} style={{ marginTop: '4rem', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
+        <Link to="/chapter-1.2" style={{ textDecoration: 'none' }}>
+          <button className="primary-button" style={{
+            padding: '1rem 3rem',
+            fontSize: '1.25rem',
+            borderRadius: '50px',
+            background: 'var(--gradient-primary)',
+            color: '#fff',
+            border: 'none',
+            cursor: 'pointer',
+            boxShadow: '0 8px 32px rgba(108,159,255,0.3)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px',
+            fontWeight: '600',
+            transition: 'transform 0.2s, box-shadow 0.2s'
+          }}>
+            Next: The Concept of Gravitation 
+            <span style={{ fontSize: '1.5rem', transform: 'translateY(-1px)' }}>→</span>
+          </button>
+        </Link>
+      </motion.div>
 
       {/* ===== Footer ===== */}
       <div className="footer">
