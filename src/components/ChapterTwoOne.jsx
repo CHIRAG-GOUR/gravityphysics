@@ -1,7 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import VideoCard from './VideoCard'
-import FreeFallDropSimulator from './FreeFallDropSimulator'
 import FreeFallCatchActivity from './FreeFallCatchActivity'
 
 const sectionAnim = {
@@ -93,13 +92,8 @@ export default function ChapterTwoOne() {
         </div>
       </motion.div>
 
-      {/* ===== DROP SIMULATOR ===== */}
-      <motion.div {...sectionAnim}>
-        <FreeFallDropSimulator />
-      </motion.div>
-
       {/* ===== CATCH ACTIVITY ===== */}
-      <motion.div {...sectionAnim}>
+      <motion.div {...sectionAnim} style={{ marginTop: '3rem' }}>
         <FreeFallCatchActivity />
       </motion.div>
 

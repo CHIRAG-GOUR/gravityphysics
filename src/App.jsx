@@ -7,6 +7,7 @@ import ChapterTwo from './components/ChapterTwo'
 import ChapterThree from './components/ChapterThree'
 import ChapterFour from './components/ChapterFour'
 import ChapterTwoOne from './components/ChapterTwoOne'
+import ChapterTwoTwo from './components/ChapterTwoTwo'
 import GravityProgressBars from './components/GravityProgressBars'
 
 export default function App() {
@@ -53,6 +54,12 @@ export default function App() {
               <>
                 <HeroSection title="FREE FALL" description="When an object falls towards the earth under the influence of gravitational force alone." />
                 <ChapterTwoOne />
+              </>
+            } />
+            <Route path="/chapter-2.2" element={
+              <>
+                <HeroSection title="ACCELERATION DUE TO GRAVITY" description="The constant acceleration experienced by objects in free fall due to Earth's gravitational attraction." />
+                <ChapterTwoTwo />
               </>
             } />
           </Routes>

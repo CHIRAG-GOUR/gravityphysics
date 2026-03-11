@@ -3,6 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 export default function FreeFallCatchActivity() {
   const [gameState, setGameState] = useState('READY') // READY, WAITING, FALLING, CAUGHT, MISSED
+  const gameStateRef = useRef('READY')
+  
+  const updateGameState = (newState) => {
+    setGameState(newState)
+    gameStateRef.current = newState
+  }
+
   const [reactionTime, setReactionTime] = useState(null)
   const [distanceFallen, setDistanceFallen] = useState(null)
   
@@ -27,7 +34,7 @@ export default function FreeFallCatchActivity() {
   }, [])
 
   const startGame = () => {
-    setGameState('WAITING')
+    updateGameState('WAITING')
     setReactionTime(null)
     setDistanceFallen(null)
     setRulerY(0)
@@ -41,12 +48,12 @@ export default function FreeFallCatchActivity() {
   }
 
   const dropRuler = () => {
-    setGameState('FALLING')
+    updateGameState('FALLING')
     dropTimeRef.current = performance.now()
     
     // Animate free fall
     const updatePhysics = () => {
-      if (gameState !== 'FALLING') return
+      if (gameStateRef.current !== 'FALLING') return
       
       const currentTime = performance.now()
       const timeElapsedS = (currentTime - dropTimeRef.current) / 1000 // t in seconds
@@ -59,7 +66,7 @@ export default function FreeFallCatchActivity() {
       
       // Check if it fell completely off screen
       if (distancePixels > CONTAINER_HEIGHT_PX) {
-        setGameState('MISSED')
+        updateGameState('MISSED')
         return
       }
       
@@ -71,14 +78,14 @@ export default function FreeFallCatchActivity() {
 
   const catchRuler = () => {
     // Determine early clicks
-    if (gameState === 'WAITING') {
+    if (gameStateRef.current === 'WAITING') {
       clearTimeout(timerRef.current)
-      setGameState('READY')
+      updateGameState('READY')
       alert("Too early! Wait for the ruler to drop.")
       return
     }
 
-    if (gameState !== 'FALLING') return
+    if (gameStateRef.current !== 'FALLING') return
 
     cancelAnimationFrame(animationFrameRef.current)
     const catchTime = performance.now()
@@ -89,11 +96,11 @@ export default function FreeFallCatchActivity() {
     
     setReactionTime(timeElapsedS.toFixed(3))
     setDistanceFallen((distanceMeters * 100).toFixed(1)) // Convert to cm
-    setGameState('CAUGHT')
+    updateGameState('CAUGHT')
   }
 
   const resetGame = () => {
-    setGameState('READY')
+    updateGameState('READY')
     setReactionTime(null)
     setDistanceFallen(null)
     setRulerY(0)
