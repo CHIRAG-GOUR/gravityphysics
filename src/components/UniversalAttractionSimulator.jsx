@@ -80,8 +80,8 @@ function NBodySystem({ bodies, setBodies }) {
         b.trail.unshift(b.p.clone())
         if (b.trail.length > TRAIL_LENGTH) b.trail.pop()
         
-        if (trailRefs.current[b.id] && b.trail.length > 1) {
-          trailRefs.current[b.id].setFromPoints(b.trail)
+        if (trailRefs.current[b.id] && trailRefs.current[b.id].geometry && b.trail.length > 1) {
+          trailRefs.current[b.id].geometry.setFromPoints(b.trail)
         }
       }
       
@@ -137,7 +137,7 @@ function ClickHandler({ setBodies, spawnMass }) {
     const v = tangent.multiplyScalar(Math.random() * 2)
 
     const isStar = spawnMass > 50
-    const color = isStar ? '#fbbf24' : `#${Math.floor(Math.random()*16777215).toString(16)}`
+    const color = isStar ? '#fbbf24' : `#${Math.floor(Math.random()*16777215).toString(16).padStart(6, '0')}`
 
     setBodies(prev => [...prev, {
       id: uuidv4(),
@@ -180,25 +180,35 @@ export default function UniversalAttractionSimulator() {
           <p className="section-subtitle">Click anywhere to spawn mass and watch mutual attraction.</p>
         </div>
         
-        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginRight: '1rem' }}>
-             <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Spawn Mass:</span>
+        <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginRight: '0.5rem', background: 'rgba(0,0,0,0.3)', padding: '0.5rem 1rem', borderRadius: '50px', border: '1px solid rgba(255,255,255,0.05)' }}>
+             <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: 600 }}>Spawn Mass:</span>
              <input 
                type="range" 
                min="1" max="100" 
                value={spawnMass} 
                onChange={(e) => setSpawnMass(Number(e.target.value))}
                className="physics-slider"
-               style={{ width: '80px' }}
+               style={{ width: '80px', accentColor: '#6c9fff' }}
              />
-             <span style={{ fontSize: '0.85rem', width: '30px' }}>{spawnMass}</span>
+             <span style={{ fontSize: '0.85rem', width: '25px', color: '#fff', fontWeight: 600 }}>{spawnMass}</span>
           </div>
 
-          <button className="panel-button" onClick={spawnSolarSystem} style={{ background: 'var(--gradient-primary)', color: '#fff' }}>
-            Preset: Orbits
+          <button 
+            style={{ 
+              padding: '0.6rem 1.5rem', borderRadius: '50px', background: 'var(--gradient-primary)', color: '#fff', border: 'none', cursor: 'pointer', fontWeight: '600', boxShadow: '0 4px 15px rgba(108,159,255,0.4)', transition: 'all 0.2s ease', fontFamily: 'inherit'
+            }} 
+            onClick={spawnSolarSystem}
+          >
+            ✨ Preset Orbits
           </button>
-          <button className="panel-button" onClick={clearBodies} style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}>
-            Clear
+          <button 
+            style={{ 
+              padding: '0.6rem 1.5rem', borderRadius: '50px', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', cursor: 'pointer', fontWeight: '600', transition: 'all 0.2s ease', fontFamily: 'inherit'
+            }} 
+            onClick={clearBodies}
+          >
+            🗑 Clear
           </button>
         </div>
       </div>

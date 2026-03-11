@@ -112,27 +112,43 @@ export default function AppleEarthSimulator() {
           <h3 className="section-title" style={{ marginBottom: '0.25rem' }}>Apple vs. Earth Simulator</h3>
           <p className="section-subtitle">Visualizing the 2nd and 3rd Laws of Motion</p>
         </div>
-        <div style={{ display: 'flex', gap: '0.5rem' }}>
+        <div style={{ display: 'flex', gap: '0.75rem' }}>
           <button 
-            className="panel-button" 
             onClick={() => setRunning(!running)}
             style={{ 
+              padding: '0.6rem 1.5rem',
+              borderRadius: '50px',
               background: running ? 'rgba(239, 68, 68, 0.1)' : 'var(--gradient-primary)',
               color: running ? '#ef4444' : '#fff',
-              border: running ? '1px solid #ef4444' : 'none'
+              border: running ? '1px solid rgba(239, 68, 68, 0.4)' : '1px solid transparent',
+              cursor: 'pointer',
+              fontWeight: '600',
+              fontFamily: 'inherit',
+              boxShadow: running ? 'none' : '0 4px 15px rgba(108,159,255,0.4)',
+              transition: 'all 0.2s ease'
             }}
           >
-            {running ? 'Pause' : 'Play Simulation'}
+            {running ? '⏸ Pause' : '▶ Play Simulation'}
           </button>
           <button 
-            className="panel-button"
-            style={{ background: 'rgba(255,255,255,0.05)', color: '#fff' }}
+            style={{ 
+              padding: '0.6rem 1.5rem',
+              borderRadius: '50px',
+              background: 'rgba(255,255,255,0.05)', 
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              color: '#fff',
+              cursor: 'pointer',
+              fontWeight: '600',
+              fontFamily: 'inherit',
+              transition: 'all 0.2s ease'
+            }}
             onClick={() => {
               setRunning(false)
               setResetCount(c => c + 1)
             }}
           >
-            Reset
+            ↺ Reset
           </button>
         </div>
       </div>

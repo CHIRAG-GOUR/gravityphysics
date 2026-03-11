@@ -89,30 +89,6 @@ export default function ChapterTwo() {
         <UniversalAttractionSimulator />
       </motion.div>
 
-      {/* ===== NAV ===== */}
-      <motion.div {...sectionAnim} style={{ marginTop: '4rem', marginBottom: '2rem', display: 'flex', justifyContent: 'center' }}>
-        <Link to="/chapter-1.1" style={{ textDecoration: 'none' }}>
-          <button className="primary-button" style={{
-            padding: '1rem 3rem',
-            fontSize: '1.25rem',
-            borderRadius: '50px',
-            background: 'rgba(255,255,255,0.1)',
-            backdropFilter: 'blur(10px)',
-            color: '#fff',
-            border: '1px solid rgba(255,255,255,0.2)',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '12px',
-            fontWeight: '600',
-            transition: 'all 0.2s'
-          }}>
-            <span style={{ fontSize: '1.5rem', transform: 'translateY(-1px) rotate(180deg)' }}>→</span>
-            Back to Unit 1
-          </button>
-        </Link>
-      </motion.div>
-
       {/* ===== Footer ===== */}
       <div className="footer">
         <p style={{ fontFamily: 'var(--font-heading)', fontWeight: 600, fontSize: '1rem', color: 'var(--text-secondary)' }}>Module 1 / Chapter 1.2</p>
