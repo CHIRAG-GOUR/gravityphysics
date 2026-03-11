@@ -142,7 +142,7 @@ function ClickHandler({ setBodies, spawnMass }) {
     setBodies(prev => [...prev, {
       id: uuidv4(),
       m: spawnMass,
-      radius: Math.max(0.2, Math.pow(spawnMass, 1/3) * 0.2), // Rough volume estimation
+      radius: Math.random() * 1.3 + 0.2, // Random size regardless of mass as requested
       p: pos,
       v: v,
       trail: [],
@@ -181,8 +181,8 @@ export default function UniversalAttractionSimulator() {
         </div>
         
         <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginRight: '0.5rem', background: 'rgba(0,0,0,0.3)', padding: '0.5rem 1rem', borderRadius: '50px', border: '1px solid rgba(255,255,255,0.05)' }}>
-             <span style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', fontWeight: 600 }}>Spawn Mass:</span>
+           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginRight: '0.5rem', background: 'rgba(0,0,0,0.05)', padding: '0.5rem 1rem', borderRadius: '50px', border: '1px solid rgba(0,0,0,0.05)' }}>
+             <span style={{ fontSize: '0.85rem', color: 'var(--accent-black)', fontWeight: 600 }}>Spawn Mass:</span>
              <input 
                type="range" 
                min="1" max="100" 
@@ -191,24 +191,24 @@ export default function UniversalAttractionSimulator() {
                className="physics-slider"
                style={{ width: '80px', accentColor: '#6c9fff' }}
              />
-             <span style={{ fontSize: '0.85rem', width: '25px', color: '#fff', fontWeight: 600 }}>{spawnMass}</span>
+             <span style={{ fontSize: '0.85rem', width: '25px', color: 'var(--accent-black)', fontWeight: 600 }}>{spawnMass}</span>
           </div>
 
           <button 
             style={{ 
-              padding: '0.6rem 1.5rem', borderRadius: '50px', background: 'var(--gradient-primary)', color: '#fff', border: 'none', cursor: 'pointer', fontWeight: '600', boxShadow: '0 4px 15px rgba(108,159,255,0.4)', transition: 'all 0.2s ease', fontFamily: 'inherit'
+              padding: '0.6rem 1.5rem', borderRadius: '50px', background: 'var(--gradient-primary)', color: '#fff', border: 'none', cursor: 'pointer', fontWeight: '600', boxShadow: '0 4px 15px rgba(255,122,0,0.4)', transition: 'all 0.2s ease', fontFamily: 'inherit'
             }} 
             onClick={spawnSolarSystem}
           >
-            ✨ Preset Orbits
+            Preset Orbits
           </button>
           <button 
             style={{ 
-              padding: '0.6rem 1.5rem', borderRadius: '50px', background: 'rgba(255,255,255,0.05)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)', color: '#fff', cursor: 'pointer', fontWeight: '600', transition: 'all 0.2s ease', fontFamily: 'inherit'
+              padding: '0.6rem 1.5rem', borderRadius: '50px', background: 'transparent', border: '1px solid rgba(0,0,0,0.1)', color: 'var(--accent-black)', cursor: 'pointer', fontWeight: '600', transition: 'all 0.2s ease', fontFamily: 'inherit'
             }} 
             onClick={clearBodies}
           >
-            🗑 Clear
+            Clear
           </button>
         </div>
       </div>

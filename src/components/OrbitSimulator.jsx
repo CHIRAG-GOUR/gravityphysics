@@ -196,7 +196,7 @@ export default function OrbitSimulator() {
         <h3 className="section-title" style={{ marginBottom: 0 }}>Orbital Mechanics</h3>
       </div>
       <p style={{ color: 'var(--text-muted)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
-        A moon in free fall — its tangential velocity keeps it from crashing into the planet, creating a stable orbit.
+        A moon in free fall - its tangential velocity keeps it from crashing into the planet, creating a stable orbit.
       </p>
 
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>

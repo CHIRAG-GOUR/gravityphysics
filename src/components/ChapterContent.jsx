@@ -37,7 +37,7 @@ export default function ChapterContent() {
         </div>
         <div className="content-text" style={{ marginTop: '1.5rem' }}>
           <p>
-            <b>The introduction establishes that force is the fundamental cause of change in an object's speed or direction.</b> While we observe various types of motion—such as an apple falling to the ground or planets orbiting the Sun—Isaac Newton was the first to realize that a single, underlying force is responsible for all of them.
+            <b>The introduction establishes that force is the fundamental cause of change in an object's speed or direction.</b> While we observe various types of motion - such as an apple falling to the ground or planets orbiting the Sun - Isaac Newton was the first to realize that a single, underlying force is responsible for all of them.
           </p>
         </div>
       </motion.div>

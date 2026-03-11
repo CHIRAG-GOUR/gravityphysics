@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 
-export default function HeroSection() {
+export default function HeroSection({ title = "GRAVITATION", description = "The fundamental force that governs the universe - from falling apples to orbiting planets." }) {
   return (
     <section className="hero-section">
 
@@ -12,7 +12,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            CBSE Class 9 — Physics Chapter
+            CBSE Class 9 - Physics Chapter
           </motion.div>
 
           <motion.div
@@ -22,7 +22,7 @@ export default function HeroSection() {
             transition={{ duration: 0.9, delay: 0.9 }}
           >
             <p className="hero-subtitle">
-              The fundamental force that governs the universe — from falling apples to orbiting planets.
+              {description}
             </p>
           </motion.div>
       </div>
@@ -33,7 +33,7 @@ export default function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
-        GRAVITATION
+        {title}
       </motion.h1>
       
     </section>

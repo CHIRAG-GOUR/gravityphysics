@@ -1,16 +1,16 @@
 /* ====================================
-   GRAVITY — LIGHT PREMIUM NEUMORPHISM
+   GRAVITY - LIGHT PREMIUM NEUMORPHISM
    Zero-gravity Dribbble-inspired
    ==================================== */
 
 :root {
-  /* Light premium base — matches Dribbble grey */
+  /* Light premium base - matches Dribbble grey */
   --bg-base: #e0e0e0;
   --bg-card: #e8e8e8;
   --shadow-dark: #bebebe;
   --shadow-light: #ffffff;
 
-  /* Accent Colors — black/orange palette from Dribbble */
+  /* Accent Colors - black/orange palette from Dribbble */
   --accent-black: #1a1a1a;
   --accent-orange: #FF7A00;
   --accent-orange-light: #FFB366;
@@ -26,7 +26,7 @@
   --card-border: rgba(0, 0, 0, 0.08);
   --card-border-hover: rgba(255, 122, 0, 0.25);
 
-  /* Text — dark on light */
+  /* Text - dark on light */
   --text-primary: #1a1a1a;
   --text-secondary: #4a4a4a;
   --text-muted: #8a8a8a;

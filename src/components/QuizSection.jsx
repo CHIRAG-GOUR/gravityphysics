@@ -11,7 +11,7 @@ const questions = [
       { label: 'C', text: 'The Moon is in free fall but its tangential velocity keeps it in orbit', correct: true },
       { label: 'D', text: 'The Sun pushes the Moon away from Earth', correct: false },
     ],
-    explanation: 'The Moon IS falling toward Earth! But its sideways velocity is just right so it keeps missing — creating a stable orbit.'
+    explanation: 'The Moon IS falling toward Earth! But its sideways velocity is just right so it keeps missing - creating a stable orbit.'
   },
   {
     id: 'q2',

@@ -113,7 +113,7 @@ export default function AppleEarthSimulator() {
           <p className="section-subtitle">Visualizing the 2nd and 3rd Laws of Motion</p>
         </div>
         <div style={{ display: 'flex', gap: '0.75rem' }}>
-          <button 
+            <button 
             onClick={() => setRunning(!running)}
             style={{ 
               padding: '0.6rem 1.5rem',
@@ -124,20 +124,19 @@ export default function AppleEarthSimulator() {
               cursor: 'pointer',
               fontWeight: '600',
               fontFamily: 'inherit',
-              boxShadow: running ? 'none' : '0 4px 15px rgba(108,159,255,0.4)',
+              boxShadow: running ? 'none' : '0 4px 15px rgba(255,122,0,0.4)',
               transition: 'all 0.2s ease'
             }}
           >
-            {running ? '⏸ Pause' : '▶ Play Simulation'}
+            {running ? 'Pause' : 'Play Simulation'}
           </button>
           <button 
             style={{ 
               padding: '0.6rem 1.5rem',
               borderRadius: '50px',
-              background: 'rgba(255,255,255,0.05)', 
-              backdropFilter: 'blur(10px)',
-              border: '1px solid rgba(255,255,255,0.1)',
-              color: '#fff',
+              background: 'transparent', 
+              border: '1px solid rgba(0,0,0,0.1)',
+              color: 'var(--accent-black)',
               cursor: 'pointer',
               fontWeight: '600',
               fontFamily: 'inherit',
@@ -148,7 +147,7 @@ export default function AppleEarthSimulator() {
               setResetCount(c => c + 1)
             }}
           >
-            ↺ Reset
+            Reset
           </button>
         </div>
       </div>
