@@ -11,6 +11,7 @@ import ChapterTwoTwo from './components/ChapterTwoTwo'
 import ChapterTwoThree from './components/ChapterTwoThree'
 import ChapterThreeOne from './components/ChapterThreeOne'
 import ChapterThreeTwo from './components/ChapterThreeTwo'
+import ChapterThreeThree from './components/ChapterThreeThree'
 import GravityProgressBars from './components/GravityProgressBars'
 
 export default function App() {
@@ -81,6 +82,12 @@ export default function App() {
               <>
                 <HeroSection title="AREA VS PRESSURE" description="Understanding the inverse relationship between area and pressure through real-world examples." />
                 <ChapterThreeTwo />
+              </>
+            } />
+            <Route path="/chapter-3.3" element={
+              <>
+                <HeroSection title="PRESSURE IN FLUIDS" description="Omnidirectional force and an introduction to buoyancy." />
+                <ChapterThreeThree />
               </>
             } />
           </Routes>

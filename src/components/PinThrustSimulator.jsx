@@ -1,27 +1,35 @@
 import React, { useState, useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { Html, PerspectiveCamera } from '@react-three/drei'
+import { PerspectiveCamera, OrbitControls } from '@react-three/drei'
 import * as THREE from 'three'
 
-// Simple thumb component
+// Simple thumb component made of primitives
 function Thumb({ pushing, position }) {
   // A simple thumb shape made of a cylinder and sphere
   return (
     <group position={position}>
-      {/* Visual thumb */}
+      {/* Visual thumb (using safe geometry) */}
       <mesh position={[0, pushing ? 1 : 1.5, 0]}>
-         <capsuleGeometry args={[0.4, 0.8, 4, 16]} />
+         <cylinderGeometry args={[0.4, 0.4, 0.8, 16]} />
+         <meshStandardMaterial color="#fca5a5" roughness={0.7} />
+      </mesh>
+      <mesh position={[0, pushing ? 1.4 : 1.9, 0]}>
+         <sphereGeometry args={[0.4, 16, 16]} />
+         <meshStandardMaterial color="#fca5a5" roughness={0.7} />
+      </mesh>
+      <mesh position={[0, pushing ? 0.6 : 1.1, 0]}>
+         <sphereGeometry args={[0.4, 16, 16]} />
          <meshStandardMaterial color="#fca5a5" roughness={0.7} />
       </mesh>
       
       {/* Downward force animated arrow */}
       {pushing && (
-         <group position={[1.5, 0.5, 0]}>
+         <group position={[1.2, 0.8, 0]}>
             <mesh position={[0, 1, 0]}>
                 <cylinderGeometry args={[0.05, 0.05, 1, 16]} />
                 <meshStandardMaterial color="#ef4444" />
             </mesh>
-            <mesh position={[0, 0.3, 0]} rotation={[Math.PI, 0, 0]}>
+            <mesh position={[0, 0.5, 0]} rotation={[Math.PI, 0, 0]}>
                 <coneGeometry args={[0.2, 0.4, 16]} />
                 <meshStandardMaterial color="#ef4444" />
             </mesh>
@@ -46,43 +54,15 @@ function DrawingPin({ pushing }) {
          <cylinderGeometry args={[0.05, 0.01, 1, 16]} />
          <meshStandardMaterial color="#cbd5e1" metalness={0.8} />
       </mesh>
-      
-      {/* Arrow showing pressure spread on top handle vs concentrated point */}
-      {pushing && (
-        <>
-          <Html position={[-1.5, 0, 0]} transform>
-            <div style={{ background: 'rgba(59, 130, 246, 0.8)', padding: '4px 8px', borderRadius: '4px', color: 'white', fontSize: '10px', whiteSpace: 'nowrap' }}>
-              Large Area = Low Pressure<br/>(Thumb doesn't hurt)
-            </div>
-          </Html>
-          <Html position={[0.5, -1.2, 0]} transform>
-            <div style={{ background: 'rgba(239, 68, 68, 0.8)', padding: '4px 8px', borderRadius: '4px', color: 'white', fontSize: '10px', whiteSpace: 'nowrap' }}>
-              Tiny Area = High Pressure<br/>(Pierces wood)
-            </div>
-          </Html>
-        </>
-      )}
     </group>
   )
 }
 
 function Board({ pushing }) {
-  const meshRef = useRef()
-  
-  // Animate the board material slightly when pierced
-  useFrame(() => {
-    if (meshRef.current) {
-        meshRef.current.material.color.lerp(
-            new THREE.Color(pushing ? '#fbbf24' : '#fcd34d'),
-            0.1
-        )
-    }
-  })
-
   return (
-    <mesh ref={meshRef} position={[0, -1.6, 0]}>
+    <mesh position={[0, -1.6, 0]}>
       <boxGeometry args={[4, 1, 4]} />
-      <meshStandardMaterial roughness={0.9} />
+      <meshStandardMaterial color={pushing ? "#fbbf24" : "#fcd34d"} roughness={0.9} />
     </mesh>
   )
 }
@@ -112,8 +92,22 @@ export default function PinThrustSimulator() {
         
         {/* Environment Pane */}
         <div style={{ flex: '2 1 400px', height: '400px', backgroundColor: '#f8fafc', borderRadius: '16px', position: 'relative', overflow: 'hidden', border: '2px solid #e2e8f0' }}>
+           
+           {/* Moving 3D Html tags to regular HTML over the canvas */}
+           {pushing && (
+             <>
+               <div style={{ position: 'absolute', top: '20%', left: '10%', zIndex: 10, background: 'rgba(59, 130, 246, 0.9)', padding: '6px 12px', borderRadius: '6px', color: 'white', fontSize: '12px', fontWeight: 'bold' }}>
+                 Low Pressure (Thumb safe)
+               </div>
+               <div style={{ position: 'absolute', bottom: '20%', right: '10%', zIndex: 10, background: 'rgba(239, 68, 68, 0.9)', padding: '6px 12px', borderRadius: '6px', color: 'white', fontSize: '12px', fontWeight: 'bold' }}>
+                 High Pressure (Pierces wood)
+               </div>
+             </>
+           )}
+
            <Canvas>
              <PerspectiveCamera makeDefault position={[5, 3, 5]} fov={40} />
+             <OrbitControls enableZoom={false} enablePan={false} enableRotate={true} target={[0, 0, 0]} />
              <ambientLight intensity={0.6} />
              <directionalLight position={[10, 10, 10]} intensity={1} castShadow />
              
