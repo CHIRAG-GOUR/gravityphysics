@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection'
 import ChapterContent from './components/ChapterContent'
 import ChapterTwo from './components/ChapterTwo'
 import ChapterThree from './components/ChapterThree'
+import ChapterFour from './components/ChapterFour'
 import GravityProgressBars from './components/GravityProgressBars'
 
 export default function App() {
@@ -37,8 +38,14 @@ export default function App() {
             } />
             <Route path="/chapter-1.3" element={
               <>
-                <HeroSection title="UNIVERSAL LAW" description="F = G(Mm)/d² : The mathematical formula that binds us to the earth and orbits planets around the sun." />
+                <HeroSection title="CENTRIPETAL FORCE" description="The center-seeking force required to keep an object moving in a circular path." />
                 <ChapterThree />
+              </>
+            } />
+            <Route path="/chapter-1.4" element={
+              <>
+                <HeroSection title="UNIVERSAL LAW" description="F = G(Mm)/d² : The mathematical formula that binds us to the earth and orbits planets around the sun." />
+                <ChapterFour />
               </>
             } />
           </Routes>
