@@ -4,6 +4,7 @@ import CosmicBackground from './components/CosmicBackground'
 import HeroSection from './components/HeroSection'
 import ChapterContent from './components/ChapterContent'
 import ChapterTwo from './components/ChapterTwo'
+import ChapterThree from './components/ChapterThree'
 import GravityProgressBars from './components/GravityProgressBars'
 
 export default function App() {
@@ -34,9 +35,12 @@ export default function App() {
                 <ChapterTwo />
               </>
             } />
-            {/* Future Chapters would go here:
-            <Route path="/chapter-1.3" element={<ChapterThree />} />
-            */}
+            <Route path="/chapter-1.3" element={
+              <>
+                <HeroSection title="UNIVERSAL LAW" description="F = G(Mm)/d² : The mathematical formula that binds us to the earth and orbits planets around the sun." />
+                <ChapterThree />
+              </>
+            } />
           </Routes>
         </div>
       </div>
