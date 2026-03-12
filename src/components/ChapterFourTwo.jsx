@@ -54,7 +54,7 @@ export default function ChapterFourTwo() {
       {/* ===== VIDEO 1 ===== */}
       <motion.div {...sectionAnim} style={{ marginTop: '3rem' }}>
         <VideoCard 
-          videoId="2dyCe1GPagE" 
+          videoPath="/videos/module4/4.2 - 1 - Float or Sink - Why do things float- Why do things sink- Lesson for kids.mp4" 
           title="Float or Sink - Why do things float- Why do things sink- Lesson for kids" 
         />
       </motion.div>
@@ -76,7 +76,7 @@ export default function ChapterFourTwo() {
               </p>
             </div>
             <div>
-              <VideoCard videoId="cd0ibGkSoBA" title="Why Cork Floats & Iron Sinks ?" isShort={true} />
+              <VideoCard videoPath="/videos/module4/4.2 - 2 Why Cork Floats and Iron Sinks.mp4" title="Why Cork Floats & Iron Sinks ?" isShort={true} />
             </div>
           </div>
         </div>

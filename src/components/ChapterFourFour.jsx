@@ -90,7 +90,7 @@ export default function ChapterFourFour() {
             <h4 style={{ fontSize: '1.1rem', fontWeight: 'bold', color: 'var(--accent-cyan)', marginBottom: '1rem' }}>3. Density Measurement (Hydrometers)</h4>
             <p style={{ marginBottom: '1rem' }}>These instruments float at different levels depending on the liquid's thickness, providing a direct reading of its density.</p>
             <VideoCard 
-              videoId="KfOWu1kBWP0" 
+              videoPath="/videos/module4/4.4 - 1 How a Hydrometer Works.mp4" 
               title="How a Hydrometer Works | Why It Sinks or Floats Explained Simply" 
             />
           </div>

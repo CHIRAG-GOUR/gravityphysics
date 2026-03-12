@@ -76,13 +76,13 @@ export default function ChapterFourThree() {
       {/* ===== VIDEOS ===== */}
       <motion.div {...sectionAnim} style={{ marginTop: '3rem' }}>
         <VideoCard 
-          videoId="PQBQN1zUm24" 
+          videoPath="/videos/module4/4.3 - 1 - Archimedes Principle - Why do ships float？ ｜ #aumsum #kids #science #education #children.mp4" 
           title="Archimedes Principle - Why do ships float?" 
         />
       </motion.div>
       <motion.div {...sectionAnim} style={{ marginTop: '2rem' }}>
         <VideoCard 
-          videoId="_p-hwElkrlk" 
+          videoPath="/videos/module4/4.3 - 2 Archimedes Principle.mp4" 
           title="Archimedes Principle" 
         />
       </motion.div>

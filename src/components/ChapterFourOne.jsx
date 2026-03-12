@@ -37,7 +37,7 @@ export default function ChapterFourOne() {
       {/* ===== VIDEO ===== */}
       <motion.div {...sectionAnim}>
         <VideoCard 
-          videoId="khc2wUBsFU4" 
+          videoPath="/videos/module4/4.1 - 1 What is Buoyancy Physics.mp4" 
           title="What is Buoyancy? | Physics | Don't Memorise" 
         />
       </motion.div>

@@ -37,7 +37,7 @@ export default function ChapterFour() {
       {/* ===== Video 1 ===== */}
       <motion.div {...sectionAnim}>
         <VideoCard 
-          videoId="Af9lRX4xsr0" 
+          videoPath="/videos/module1/1.4 - 1 Understanding Universal law of Gravitation.mp4" 
           title="Understanding Universal law of Gravitation!"
           description="An introduction to the Universal Law of Gravitation."
         />
@@ -121,7 +121,7 @@ export default function ChapterFour() {
         <h3 className="section-title" style={{ marginBottom: '1.5rem' }}>2. The Universal Gravitational Constant (G)</h3>
         
         <VideoCard 
-          videoId="c9shwPMpSq8" 
+          videoPath="/videos/module1/1.4 - 2 Value of G.mp4" 
           title="The Universal Gravitational Constant"
           description="Learn about 'G' and Cavendish's experiment."
           style={{ marginBottom: '2rem' }}

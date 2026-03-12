@@ -37,7 +37,7 @@ export default function ChapterTwo() {
       {/* ===== Video 1 ===== */}
       <motion.div {...sectionAnim}>
         <VideoCard 
-          videoId="nnV6eFx_9jo" 
+          videoPath="/videos/module1/1.2 - 1 CBSE Class 9 Gravitation Animation.mp4" 
           title="CBSE Class 9 || Physics || Gravitation || Animation"
           description="Watch until 2:33 for the core conceptual introduction to Gravitation."
         />
@@ -46,20 +46,12 @@ export default function ChapterTwo() {
       {/* ===== Video 2 ===== */}
       <motion.div {...sectionAnim} style={{ marginTop: '2rem' }}>
         <VideoCard 
-          videoId="AFGOzTM0N-A" 
+          videoPath="/videos/module1/1.2 - 2 Introduction to Gravitation.mp4" 
           title="Gravitation Concept Animation"
           description="Further visual breakdown of gravitational concepts."
         />
       </motion.div>
 
-      {/* ===== EDUCATIONAL IMAGE ===== */}
-      <motion.div className="neu-card" {...sectionAnim} style={{ marginTop: '3rem', padding: '2rem', display: 'flex', justifyContent: 'center' }}>
-        <img 
-          src="https://login.skillizee.io/s/articles/69b0e6a4cd5819c62bc542d4/images/image-20260311092102-1.png" 
-          alt="Gravitation Concept" 
-          style={{ maxWidth: '100%', height: 'auto', borderRadius: 'var(--radius-sm)' }} 
-        />
-      </motion.div>
 
       {/* ===== CONCEPT EXPLANATION ===== */}
       <motion.div className="neu-card" {...sectionAnim} style={{ marginTop: '3rem' }}>

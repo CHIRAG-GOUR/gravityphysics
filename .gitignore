@@ -5,3 +5,10 @@ dist/
 .tmp/
 credentials.json
 token.json
+
+# Media Files (Allowed for local player)
+# *.mp4
+# *.mov
+# *.webm
+# *.avi
+# *.mkv

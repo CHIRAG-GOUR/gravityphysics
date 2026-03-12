@@ -38,7 +38,7 @@ export default function ChapterTwoThree() {
       {/* ===== VIDEO ===== */}
       <motion.div {...sectionAnim} style={{ marginTop: '3rem' }}>
         <VideoCard 
-          videoId="rFdbY_V7vIo" 
+          videoPath="/videos/module2/2.3 - 1 Mass vs Weight.mp4" 
           title="Mass vs Weight"
           description="Understanding the fundamental difference between the amount of matter and the force of gravity."
         />

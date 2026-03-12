@@ -37,7 +37,7 @@ export default function ChapterTwoTwo() {
       {/* ===== VIDEO ===== */}
       <motion.div {...sectionAnim} style={{ marginTop: '3rem' }}>
         <VideoCard 
-          videoId="zy1Bb6Pp95s" 
+          videoPath="/videos/module2/2.2 - 1 Acceleration due to Gravity Physics.mp4" 
           title="Acceleration due to Gravity? Physics"
           description="Understanding 'g' and how it varies."
         />

@@ -47,7 +47,7 @@ export default function ChapterTwoOne() {
       {/* ===== VIDEO ===== */}
       <motion.div {...sectionAnim} style={{ marginTop: '3rem' }}>
         <VideoCard 
-          videoId="6mFGzESlmxI" 
+          videoPath="/videos/module2/2.1 - 1.mp4" 
           title="Understanding Charging by Induction: A Physics Guide for Class 10 & 12 Students!"
           description="Free Fall Introduction"
         />

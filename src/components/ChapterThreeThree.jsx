@@ -46,7 +46,7 @@ export default function ChapterThreeThree() {
       {/* ===== VIDEO ===== */}
       <motion.div {...sectionAnim} style={{ marginTop: '3rem' }}>
         <VideoCard 
-          videoId="4p216lbkkxU" 
+          videoPath="/videos/module3/3.3 - 1 Fluids at Rest Crash Course Physics.mp4" 
           title="Fluids at Rest: Crash Course Physics #14"
           description="Understanding how pressure works inside liquids and gases."
         />

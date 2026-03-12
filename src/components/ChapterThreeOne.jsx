@@ -52,7 +52,7 @@ export default function ChapterThreeOne() {
       {/* ===== VIDEO ===== */}
       <motion.div {...sectionAnim} style={{ marginTop: '3rem' }}>
         <VideoCard 
-          videoId="UKl33k-qQ0k" 
+          videoPath="/videos/module3/3.1 - 1 Difference between Thrust and Pressure.mp4" 
           title="Difference between Thrust and Pressure?"
           description="Understanding force distribution."
         />

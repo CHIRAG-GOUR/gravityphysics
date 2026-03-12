@@ -46,7 +46,7 @@ export default function ChapterThree() {
       {/* ===== Video ===== */}
       <motion.div {...sectionAnim} style={{ marginTop: '3rem' }}>
         <VideoCard 
-          videoId="KvCezk9DJfk" 
+          videoPath="/videos/module1/1.3 - Centripital Force.mp4" 
           title="Centripetal Force"
           description="Understanding the 'center-seeking' force."
         />
