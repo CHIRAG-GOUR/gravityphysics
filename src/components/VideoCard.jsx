@@ -159,6 +159,35 @@ export default function VideoCard({ videoId, title, subtitle, videoPath }) {
             style={{ width: '100%', height: '100%', display: 'block', objectFit: 'contain' }}
           />
 
+          {/* Player Branding / Top Bar */}
+          <AnimatePresence>
+            {showControls && (
+              <motion.div
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  padding: '1.2rem 1.5rem',
+                  background: 'linear-gradient(rgba(0,0,0,0.6), transparent)',
+                  zIndex: 20,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between'
+                }}
+              >
+                <img 
+                  src="/images/skillizee-logo.png" 
+                  alt="Skillizee" 
+                  style={{ height: '24px', opacity: 0.9, filter: 'brightness(0) invert(1)' }} 
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
+
           {/* Big Center Play Button Overlay */}
           <AnimatePresence>
             {!isPlaying && (
@@ -186,13 +215,9 @@ export default function VideoCard({ videoId, title, subtitle, videoPath }) {
                   boxShadow: '0 0 30px rgba(0,0,0,0.3)'
                 }}
               >
-                <div style={{ 
-                  width: 0, height: 0, 
-                  borderTop: '15px solid transparent', 
-                  borderBottom: '15px solid transparent', 
-                  borderLeft: '25px solid #fff',
-                  marginLeft: '5px'
-                }} />
+                <svg width="30" height="30" viewBox="0 0 24 24" fill="#fff">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
               </motion.div>
             )}
           </AnimatePresence>
@@ -209,12 +234,12 @@ export default function VideoCard({ videoId, title, subtitle, videoPath }) {
                   bottom: 0,
                   left: 0,
                   right: 0,
-                  padding: '2rem 1.5rem 1rem',
-                  background: 'linear-gradient(transparent, rgba(0,0,0,0.8))',
+                  padding: '2.5rem 1.5rem 1.2rem',
+                  background: 'linear-gradient(transparent, rgba(0,0,0,0.85))',
                   zIndex: 20,
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '12px'
+                  gap: '15px'
                 }}
               >
                 {/* Progress Bar */}
@@ -249,59 +274,79 @@ export default function VideoCard({ videoId, title, subtitle, videoPath }) {
                 </div>
 
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '25px' }}>
                     {/* Play/Pause */}
-                    <button onClick={togglePlay} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#fff', fontSize: '1.2rem', display: 'flex', alignItems: 'center' }}>
+                    <button onClick={togglePlay} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, color: '#fff', display: 'flex', alignItems: 'center' }}>
                       {isPlaying ? (
-                        <div style={{ display: 'flex', gap: '4px' }}>
-                          <div style={{ width: '4px', height: '18px', background: '#fff', borderRadius: '2px' }} />
-                          <div style={{ width: '4px', height: '18px', background: '#fff', borderRadius: '2px' }} />
-                        </div>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff">
+                          <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
+                        </svg>
                       ) : (
-                        <div style={{ width: 0, height: 0, borderTop: '9px solid transparent', borderBottom: '9px solid transparent', borderLeft: '14px solid #fff' }} />
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff">
+                          <path d="M8 5v14l11-7z" />
+                        </svg>
                       )}
                     </button>
 
                     {/* Volume */}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }} className="volume-control">
-                      <button onClick={toggleMute} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#fff', padding: 0 }}>
-                        {isMuted || volume === 0 ? '🔇' : '🔊'}
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }} className="volume-control">
+                      <button onClick={toggleMute} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#fff', padding: 0, display: 'flex' }}>
+                        {isMuted || volume === 0 ? (
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff">
+                            <path d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v2.21l2.45 2.45c.03-.2.05-.41.05-.63zm2.5 0c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77v2.06c2.89.86 5 3.54 5 6.71zM4.27 3L3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25c-.67.52-1.42.93-2.25 1.18v2.06c1.38-.31 2.63-.95 3.69-1.81L19.73 21 21 19.73l-9-9L4.27 3z" />
+                          </svg>
+                        ) : (
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="#fff">
+                            <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z" />
+                          </svg>
+                        )}
                       </button>
                       <input 
                         type="range" min="0" max="1" step="0.1" 
                         value={volume} onChange={handleVolumeChange}
-                        style={{ width: '60px', height: '4px', cursor: 'pointer' }}
+                        style={{ width: '80px', height: '4px', cursor: 'pointer' }}
                       />
                     </div>
 
                     {/* Time */}
-                    <span style={{ color: '#fff', fontSize: '0.85rem', fontWeight: 500, fontFamily: 'monospace' }}>
+                    <span style={{ color: '#fff', fontSize: '0.9rem', fontWeight: 500, fontFamily: 'var(--font-primary), monospace', opacity: 0.9 }}>
                       {formatTime(currentTime)} / {formatTime(duration)}
                     </span>
                   </div>
 
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '25px' }}>
                     {/* Speed */}
                     <button 
                       onClick={changeSpeed}
                       style={{ 
-                        background: 'rgba(255,255,255,0.1)', 
+                        background: 'rgba(255,255,255,0.12)', 
                         border: '1px solid rgba(255,255,255,0.2)', 
-                        borderRadius: '4px', 
+                        borderRadius: '6px', 
                         color: '#fff', 
-                        fontSize: '0.75rem', 
-                        padding: '4px 8px',
+                        fontSize: '0.8rem', 
+                        padding: '6px 12px',
                         cursor: 'pointer',
                         fontWeight: 700,
-                        minWidth: '45px'
+                        minWidth: '55px',
+                        transition: 'all 0.2s ease'
                       }}
+                      onMouseEnter={(e) => e.target.style.background = 'rgba(255,255,255,0.2)'}
+                      onMouseLeave={(e) => e.target.style.background = 'rgba(255,255,255,0.12)'}
                     >
                       {playbackSpeed}x
                     </button>
 
                     {/* Fullscreen */}
-                    <button onClick={toggleFullscreen} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#fff', fontSize: '1.1rem' }}>
-                      {isFullscreen ? '🏁' : '🔲'}
+                    <button onClick={toggleFullscreen} style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#fff', display: 'flex' }}>
+                      {isFullscreen ? (
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff">
+                          <path d="M5 16h3v3h2v-5H5v2zm3-8H5v2h5V5H8v3zm6 11h2v-3h3v-2h-5v5zm2-11V5h-2v5h5V8h-3z" />
+                        </svg>
+                      ) : (
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff">
+                          <path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z" />
+                        </svg>
+                      )}
                     </button>
                   </div>
                 </div>
@@ -312,11 +357,15 @@ export default function VideoCard({ videoId, title, subtitle, videoPath }) {
           <style dangerouslySetInnerHTML={{ __html: `
             .video-seekbar::-webkit-slider-thumb {
               -webkit-appearance: none;
-              width: 14px;
-              height: 14px;
+              width: 16px;
+              height: 16px;
               background: #fff;
               border-radius: 50%;
               box-shadow: 0 0 10px rgba(0,0,0,0.5);
+              transition: transform 0.1s ease;
+            }
+            .video-seekbar:hover::-webkit-slider-thumb {
+              transform: scale(1.2);
             }
             .custom-video-player video::-webkit-media-controls {
               display: none !important;
