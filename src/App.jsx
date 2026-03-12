@@ -12,6 +12,10 @@ import ChapterTwoThree from './components/ChapterTwoThree'
 import ChapterThreeOne from './components/ChapterThreeOne'
 import ChapterThreeTwo from './components/ChapterThreeTwo'
 import ChapterThreeThree from './components/ChapterThreeThree'
+import ChapterFourOne from './components/ChapterFourOne'
+import ChapterFourTwo from './components/ChapterFourTwo'
+import ChapterFourThree from './components/ChapterFourThree'
+import ChapterFourFour from './components/ChapterFourFour'
 import GravityProgressBars from './components/GravityProgressBars'
 import FullscreenButton from './components/FullscreenButton'
 
@@ -92,6 +96,30 @@ export default function App() {
               <>
                 <HeroSection title="PRESSURE IN FLUIDS" description="Omnidirectional force and an introduction to buoyancy." />
                 <ChapterThreeThree />
+              </>
+            } />
+            <Route path="/chapter-4.1" element={
+              <>
+                <HeroSection title="BUOYANCY" description="The upward force exerted by fluids that makes objects feel lighter." />
+                <ChapterFourOne />
+              </>
+            } />
+            <Route path="/chapter-4.2" element={
+              <>
+                <HeroSection title="FLOAT OR SINK" description="Why some objects float while others sink, and the critical role of density." />
+                <ChapterFourTwo />
+              </>
+            } />
+            <Route path="/chapter-4.3" element={
+              <>
+                <HeroSection title="ARCHIMEDES' PRINCIPLE" description="An upward force equal to the weight of the fluid it displaces." />
+                <ChapterFourThree />
+              </>
+            } />
+            <Route path="/chapter-4.4" element={
+              <>
+                <HeroSection title="APPLICATIONS" description="Real-world uses of buoyancy, from giant steel ships to measuring instruments." />
+                <ChapterFourFour />
               </>
             } />
           </Routes>
