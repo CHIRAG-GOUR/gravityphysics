@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import VideoCard from './VideoCard'
 import UniversalLawMathSimulator from './UniversalLawMathSimulator'
 import GravitationalPhenomenaSimulator from './GravitationalPhenomenaSimulator'
+import PhetSimulator from './PhetSimulator'
 
 const sectionAnim = {
   initial: { opacity: 0, y: 50 },
@@ -214,6 +215,13 @@ export default function ChapterFour() {
       <motion.div {...sectionAnim}>
         <GravitationalPhenomenaSimulator />
       </motion.div>
+
+      {/* ===== PHET CELESTIAL LABORATORY ===== */}
+      <PhetSimulator 
+        url="https://phet.colorado.edu/sims/html/gravity-and-orbits/latest/gravity-and-orbits_all.html"
+        title="Gravity and Orbits - System Exploration"
+        description="Master the cosmic dance! Toggle 'To Scale' to see the true distances between celestial bodies. Use the mass sliders to observe how increasing the sun's mass affects earth's orbit, and verify Newton's Universal Law in a dynamic, 3D environment."
+      />
 
       {/* ===== Footer ===== */}
       <div className="footer">
